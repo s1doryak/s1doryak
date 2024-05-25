@@ -1,0 +1,15 @@
+name: IP information (ubuntu-latest)
+on:
+  workflow_dispatch:
+    inputs:
+      ip:
+        description: 'IP'
+        default: '8.8.8.8'
+        required: true
+        type: string
+jobs:
+  nslookup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run IP infornmation...
+      run: echo $(curl -s ipinfo.io/${{ github.event.inputs.ip }})
