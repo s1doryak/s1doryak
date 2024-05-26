@@ -1,0 +1,13 @@
+name: Get worker info (ubuntu-latest)
+on:
+  workflow_dispatch:
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run uname...
+      run: uname -a
+    - name: Run lspcu...
+      run: lscpu
+    - name: Run hwinfo...
+      run: hwinfo
